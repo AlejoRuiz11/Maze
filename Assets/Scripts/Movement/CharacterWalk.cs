@@ -63,6 +63,7 @@ public class CharacterWalk : MonoBehaviour, IMovable
 
     public void PararSonido()
     {
+        if (characterSoundManager == null) return;
         characterSoundManager.SetLoop(false);
         if(characterSoundManager.getCurrentClip() == characterSoundManager.walkSound || characterSoundManager.getCurrentClip() == characterSoundManager.runSound)
         {
