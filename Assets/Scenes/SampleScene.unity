@@ -4465,7 +4465,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 70
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -4491,8 +4491,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.094895996, y: 0.16768715, z: 0.016218914, w: 0.98112833}
-  m_LocalPosition: {x: -2.0650966, y: 0.41237497, z: -5.8649096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.2, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12155,50 +12155,6 @@ Transform:
   - {fileID: 730265995}
   m_Father: {fileID: 1957802565}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &898085637
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 898085639}
-  - component: {fileID: 898085640}
-  m_Layer: 0
-  m_Name: GameOverManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &898085639
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898085637}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 398.59998, y: 227.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &898085640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 898085637}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c92af7992f6dcd44daec962edcdde8bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &899514261
 GameObject:
   m_ObjectHideFlags: 0
@@ -15038,8 +14994,11 @@ GameObject:
   - component: {fileID: 1067246047}
   - component: {fileID: 1067246049}
   - component: {fileID: 1067246051}
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
+=======
   - component: {fileID: 1067246052}
   - component: {fileID: 1067246053}
+>>>>>>> Stashed changes:Assets/Scenes/GameScene.unity
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Player
@@ -15283,6 +15242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb7b73c16e95946b648212690880ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
+=======
 --- !u!114 &1067246052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15312,6 +15273,7 @@ MonoBehaviour:
   yellowFeather: {fileID: 6931989632512986154, guid: 5bdc92ecde7b9f441ae5cf70a5a8d3b6,
     type: 3}
   Egg: {fileID: 8097380136957791421, guid: 80cfbe891b72a994087956ee69b9383f, type: 3}
+>>>>>>> Stashed changes:Assets/Scenes/GameScene.unity
 --- !u!1 &1084996163
 GameObject:
   m_ObjectHideFlags: 0
@@ -16627,6 +16589,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156904574}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
+=======
 --- !u!1 &1178045241
 GameObject:
   m_ObjectHideFlags: 0
@@ -16763,6 +16727,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes:Assets/Scenes/GameScene.unity
 --- !u!1 &1181491677
 GameObject:
   m_ObjectHideFlags: 0
@@ -26366,6 +26331,10 @@ SceneRoots:
   - {fileID: 1307555552}
   - {fileID: 899514262}
   - {fileID: 1120980397}
+<<<<<<< Updated upstream:Assets/Scenes/SampleScene.unity
+  - {fileID: 565244461}
+=======
   - {fileID: 1178045244}
   - {fileID: 898085639}
   - {fileID: 987701301}
+>>>>>>> Stashed changes:Assets/Scenes/GameScene.unity

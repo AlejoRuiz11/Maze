@@ -11,4 +11,7 @@ public class CharacterDie : MonoBehaviour
             FindObjectOfType<GameOverManager>().TriggerDefeat();
         }
     }
+
+
+    
 }

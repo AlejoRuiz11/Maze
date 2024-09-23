@@ -10,6 +10,7 @@ public class CharacterInput : MonoBehaviour
     private string RUN_MOVEMENT_STRATEGY = "CharacterRun";
     private string WALK_MOVEMENT_STRATEGY = "CharacterWalk";
 
+    private DropFeather playerDropFeather;
     private CharacterWalk characterWalk;
     private CharacterRun characterRun;
     private PlayerInteraction playerInteraction;
@@ -28,6 +29,9 @@ public class CharacterInput : MonoBehaviour
     [SerializeField] private KeyCode jump = KeyCode.Space;
     [SerializeField] private KeyCode cambiarCamara= KeyCode.Tab;
     [SerializeField] private KeyCode interactuar= KeyCode.E;
+    [SerializeField] private KeyCode dropYellowFeather = KeyCode.Q;
+    [SerializeField] private KeyCode dropEgg = KeyCode.F;
+
 
     // CAMARAS
 
@@ -49,18 +53,19 @@ public class CharacterInput : MonoBehaviour
         characterRun = GetComponent<CharacterRun>();
         characterJump = GetComponent<CharacterJump>();
         playerInteraction = GetComponent<PlayerInteraction>();
+        playerDropFeather = GetComponent<DropFeather>();
 
         movementLogic = characterWalk;
 
-        camaraPrimeraPersona.SetActive(true);
-        camaraTerceraPersona.SetActive(false);
-        camaritaAux = false; // false == primera persona
+        camaraPrimeraPersona.SetActive(false);
+        camaraTerceraPersona.SetActive(true);
+        camaritaAux = true; // false == primera persona
 
         cabeza = transform.Find("Cabeza")?.gameObject;
         cuerpo = transform.Find("Cuerpo")?.gameObject;
 
-        cabeza.SetActive(false);
-        cuerpo.SetActive(false);
+        cabeza.SetActive(true);
+        cuerpo.SetActive(true);
     }
 
     private void Update() {
@@ -108,6 +113,14 @@ public class CharacterInput : MonoBehaviour
         if(Input.GetKeyDown(interactuar))
         {
             playerInteraction.Interactuar();
+        }
+        if(Input.GetKeyDown(dropYellowFeather))
+        {
+            playerDropFeather.InstantiateFeather(true);
+        }
+        if(Input.GetKeyDown(dropEgg))
+        {
+            playerDropFeather.InstantiateFeather(false);
         }
     }
 

@@ -6,13 +6,15 @@ public class BotonPuertaInicio : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject puerta;
     private float velocidad = 1f;
-    private bool utilizado = false;
+    public bool used = false;
+
+    public bool Utilizado => used;
 
     public void Interactuar()
     {
-        if(!utilizado)
+        if(!Utilizado)
         {
-            utilizado = true;
+            used = true;
             StartCoroutine(SubirPuerta());
         }
     }

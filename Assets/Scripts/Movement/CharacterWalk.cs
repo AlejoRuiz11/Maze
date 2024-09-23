@@ -54,7 +54,7 @@ public class CharacterWalk : MonoBehaviour, IMovable
     {
         if(characterSoundManager.getCurrentClip() != characterSoundManager.walkSound || !characterSoundManager.IsPlaying())
         {
-            characterSoundManager.CambiarVolumen(0.8f);
+            characterSoundManager.CambiarVolumen(0.5f);
             characterSoundManager.SetLoop(true);
             characterSoundManager.cambiarClip(characterSoundManager.walkSound);
             characterSoundManager.Play();

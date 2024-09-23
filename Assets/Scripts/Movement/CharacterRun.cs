@@ -49,7 +49,7 @@ public class CharacterRun : MonoBehaviour, IMovable
     {
         if(characterSoundManager.getCurrentClip() != characterSoundManager.runSound || !characterSoundManager.IsPlaying())
         {
-            characterSoundManager.CambiarVolumen(0.8f);
+            characterSoundManager.CambiarVolumen(0.5f);
             characterSoundManager.SetLoop(true);
             characterSoundManager.cambiarClip(characterSoundManager.runSound);
             characterSoundManager.Play();

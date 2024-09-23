@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInteractable
+public interface ICoinable
 {
-    bool Utilizado { get; }
-    void Interactuar();
+    float time { get; }
+
+    void takeCoin();
+
 }
