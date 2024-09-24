@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class CharacterDie : MonoBehaviour
 {
-    private void FixedUpdate()
+    private ICommand deathCommand;
+
+    private void Start()
     {
-        if (gameObject.transform.position.y < -5f)
-        {
-            FindObjectOfType<GameOverManager>().TriggerDefeat();
-        }
+        GameOverManager gameOverManager = FindObjectOfType<GameOverManager>();
+        deathCommand = new CharacterDeathCommand(gameOverManager);
     }
 
-
-    
+    private void FixedUpdate()
+    {
+        if (transform.position.y < -5f)
+        {
+            deathCommand.Execute();
+        }
+    }
 }

@@ -5,17 +5,15 @@ using UnityEngine;
 public class CharacterRun : MonoBehaviour, IMovable
 {
     public float Speed => speed;
-    [SerializeField] private float speed = 12;
+    public float speed = 12;
     private CharacterJump characterJump;
     private CharacterSoundManager characterSoundManager;
-    private Rigidbody rb; // Referencia al Rigidbody
     private CharacterController characterController;
 
     private void Start()
     {
         characterSoundManager = GetComponent<CharacterSoundManager>();
         characterJump = GetComponent<CharacterJump>();
-        //rb = GetComponent<Rigidbody>(); // Obtiene el Rigidbody
         characterController = GetComponent<CharacterController>();
     }
 
@@ -24,19 +22,13 @@ public class CharacterRun : MonoBehaviour, IMovable
         
         if(characterJump.IsJumping)
         {
-            //rb.drag = 0;
-            //rb.AddForce(direction.normalized * speed * 0.1f, ForceMode.Force);
             characterController.Move(direction.normalized * speed * Time.deltaTime);
         }
         else
         {
-            //rb.drag = 8;
-            //rb.AddForce(direction.normalized * speed * 5f, ForceMode.Force);
-            //transform.position += direction * speed * Time.deltaTime;
             characterController.Move(direction.normalized * speed * Time.deltaTime);
         }
 
-        
         // rotar camara
         float rotateSpeed = 3.5f;
         Quaternion targetRotation = Quaternion.LookRotation(direction);

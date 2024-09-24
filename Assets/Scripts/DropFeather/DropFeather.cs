@@ -7,7 +7,7 @@ public class DropFeather : MonoBehaviour
     public bool inMaze = false;
     [SerializeField] private GameObject cuerpoGO;
     [SerializeField] private GameObject yellowFeather;
-    [SerializeField] private GameObject Egg;
+    [SerializeField] private GameObject egg;
 
     public void InstantiateFeather(bool yellow)
     {
@@ -21,7 +21,7 @@ public class DropFeather : MonoBehaviour
             }
             else
             {
-                Instantiate(Egg, positionEgg, Quaternion.LookRotation(Vector3.up));
+                Instantiate(egg, positionEgg, Quaternion.LookRotation(Vector3.up));
             }
         }        
     }

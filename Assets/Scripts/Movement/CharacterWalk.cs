@@ -8,7 +8,6 @@ public class CharacterWalk : MonoBehaviour, IMovable
     [SerializeField] private float speed = 6;
     private CharacterSoundManager characterSoundManager;
     private CharacterJump characterJump;
-    private Rigidbody rb; // Referencia al Rigidbody
 
     private CharacterController characterController;
 
@@ -16,7 +15,6 @@ public class CharacterWalk : MonoBehaviour, IMovable
     {
         characterSoundManager = GetComponent<CharacterSoundManager>();
         characterJump = GetComponent<CharacterJump>();
-        //rb = GetComponent<Rigidbody>(); 
         characterController = GetComponent<CharacterController>();
     }
 
@@ -26,23 +24,12 @@ public class CharacterWalk : MonoBehaviour, IMovable
         
         if(characterJump.IsJumping)
         {
-            //rb.drag = 0;
-            //rb.AddForce(direction.normalized * speed * 0.1f, ForceMode.Force);
-            //transform.position += direction * speed * Time.deltaTime;
             characterController.Move(direction.normalized * speed * Time.deltaTime);
         }
         else
         {
-            //rb.drag = 8;
-            //rb.AddForce(direction.normalized * speed * 5f, ForceMode.Force);
-            //rb.velocity = direction.normalized * speed;
-            //rb.AddForce(direction.normalized * speed * 0.1f, ForceMode.VelocityChange);
-            //transform.position += direction * speed * Time.deltaTime;
-            //direction.y =0;
             characterController.Move(direction.normalized * speed * Time.deltaTime);
         }
-        
-        
 
         // rotar camara
         float rotateSpeed = 3.5f;
