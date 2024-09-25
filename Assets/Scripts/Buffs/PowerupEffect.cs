@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class PowerupEffect : ScriptableObject
 {
-    [field: SerializeField] public float powerUpTime { get; private set; }
+    [field: SerializeField] public static float powerUpTime = 15f; 
     public abstract void Apply(GameObject target);  
 }
+    
