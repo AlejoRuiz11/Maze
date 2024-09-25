@@ -8,6 +8,14 @@ public class Countdown : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     public float remainingTime;
 
+    private ICommand deathCommand;
+
+
+    private void Start()
+    {
+        GameOverManager gameOverManager = FindObjectOfType<GameOverManager>();
+        deathCommand = new CharacterDeathCommand(gameOverManager);
+    }
     void Update()
     {
         if (remainingTime > 0)
@@ -17,7 +25,7 @@ public class Countdown : MonoBehaviour
         else if (remainingTime < 0)
         {
             remainingTime = 0;
-            FindObjectOfType<GameOverManager>().TriggerDefeat();
+            deathCommand.Execute();
             timerText.color = Color.red;
         }
 
