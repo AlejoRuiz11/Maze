@@ -7,13 +7,30 @@ using UnityEngine;
 
 public class SpeedBuff : PowerupEffect
 {
-    public float speed;
+    public float speed; 
+
     public override void Apply(GameObject target)
     {
-        if (target.GetComponent<CharacterRun>().speed < speed)
+        MonoBehaviour targetMonoBehaviour = target.GetComponent<MonoBehaviour>();
+        if (targetMonoBehaviour != null)
         {
-            target.GetComponent<CharacterRun>().speed = speed;
+            targetMonoBehaviour.StartCoroutine(ApplySpeedBoost(target));
         }
     }
 
+    private IEnumerator ApplySpeedBoost(GameObject target)
+    {
+        CharacterRun characterRun = target.GetComponent<CharacterRun>();
+
+        if (characterRun != null)
+        {
+            float originalSpeed = characterRun.speed; 
+
+            characterRun.speed = speed;
+
+            yield return new WaitForSeconds(powerUpTime);
+
+            characterRun.speed = originalSpeed;
+        }
+    }
 }

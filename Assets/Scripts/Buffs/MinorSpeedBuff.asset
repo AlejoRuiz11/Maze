@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MinorSpeedBuff
   m_EditorClassIdentifier: 
   <powerUpTime>k__BackingField: 15
-  speed: 15
+  speed: 18
