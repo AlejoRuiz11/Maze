@@ -485,6 +485,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MajorSpeedPowerup (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2901312347460100313, guid: 9e3498cb17043dd4281aa5b80964a2c2,
+        type: 3}
+      propertyPath: powerupEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: c738ad937b068b24c8bcef24c0f127d0,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -857,6 +863,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MajorSpeedPowerup (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2901312347460100313, guid: 9e3498cb17043dd4281aa5b80964a2c2,
+        type: 3}
+      propertyPath: powerupEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: c738ad937b068b24c8bcef24c0f127d0,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5065,6 +5077,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MajorSpeedPowerup (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2901312347460100313, guid: 9e3498cb17043dd4281aa5b80964a2c2,
+        type: 3}
+      propertyPath: powerupEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: c738ad937b068b24c8bcef24c0f127d0,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8642,6 +8660,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MajorSpeedPowerup (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2901312347460100313, guid: 9e3498cb17043dd4281aa5b80964a2c2,
+        type: 3}
+      propertyPath: powerupEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: c738ad937b068b24c8bcef24c0f127d0,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8974,6 +8998,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MajorSpeedPowerup (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2901312347460100313, guid: 9e3498cb17043dd4281aa5b80964a2c2,
+        type: 3}
+      propertyPath: powerupEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: c738ad937b068b24c8bcef24c0f127d0,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9042,6 +9072,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MajorSpeedPowerup (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2901312347460100313, guid: 9e3498cb17043dd4281aa5b80964a2c2,
+        type: 3}
+      propertyPath: powerupEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: c738ad937b068b24c8bcef24c0f127d0,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10611,6 +10647,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: MajorSpeedPowerup
       objectReference: {fileID: 0}
+    - target: {fileID: 2901312347460100313, guid: 9e3498cb17043dd4281aa5b80964a2c2,
+        type: 3}
+      propertyPath: powerupEffect
+      value: 
+      objectReference: {fileID: 11400000, guid: c738ad937b068b24c8bcef24c0f127d0,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271bc27bd987dcd41ad31da515d7c2b4, type: 3}
   m_Name: MinorSpeedBuff
   m_EditorClassIdentifier: 
-  <powerUpTime>k__BackingField: 15
-  speed: 18
+  speed: 16
