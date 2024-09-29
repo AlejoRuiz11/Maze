@@ -25,7 +25,7 @@ public class Countdown : MonoBehaviour
         else if (remainingTime < 0)
         {
             remainingTime = 0;
-            deathCommand.Execute();
+            deathCommand.Do();
             timerText.color = Color.red;
         }
 

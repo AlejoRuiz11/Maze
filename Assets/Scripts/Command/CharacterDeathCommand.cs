@@ -11,8 +11,13 @@ public class CharacterDeathCommand : ICommand
         this.gameOverManager = gameOverManager;
     }
 
-    public void Execute()
+    public void Do()
     {
         gameOverManager.TriggerDefeat();
+    }
+
+    public void Undo()
+    {
+        
     }
 }

@@ -11,13 +11,13 @@ public class CharacterInput : MonoBehaviour
     private string WALK_MOVEMENT_STRATEGY = "CharacterWalk";
 
     private DropFeather playerDropFeather;
-    private CharacterWalk characterWalk;
+    public CharacterWalk characterWalk;
     private CharacterRun characterRun;
     private PlayerInteraction playerInteraction;
-    private IMovable movementLogic;
+    public IMovable movementLogic;
 
     private CharacterJump characterJump;
-    private bool camaritaAux = false;
+    public bool camaritaAux = false;
     [SerializeField] private Transform cam;
     //private CharacterMovement characterMovement;
 
@@ -132,7 +132,7 @@ public class CharacterInput : MonoBehaviour
             camaraTerceraPersona.SetActive(false);
             camaritaAux = false;
             yield return new WaitForSeconds(0.5f);
-            Debug.Log("aaaa");
+            //Debug.Log("aaaa");
             cabeza.SetActive(false);
             cuerpo.SetActive(false);
         }
@@ -142,7 +142,7 @@ public class CharacterInput : MonoBehaviour
             camaraTerceraPersona.SetActive(true);
             camaritaAux = true;
             yield return new WaitForSeconds(0.5f);
-            Debug.Log("bbbb");
+            //Debug.Log("bbbb");
             cabeza.SetActive(true);
             cuerpo.SetActive(true);
         }

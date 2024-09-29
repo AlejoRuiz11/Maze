@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public bool[] llaves;
+
+    private void Start()
+    {
+        llaves = new bool[1];
+        llaves[0] = false;
+    }
 
     public void Interactuar()
     {
-        float interactRange = 2f;
+        float interactRange = 3f;
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
         
         foreach (Collider collider in colliderArray)
@@ -24,7 +31,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public bool SomethingToInteract() // to show interaction hud
     {
-        float interactRange = 2f;
+        float interactRange = 3f;
         Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
         
         foreach (Collider collider in colliderArray)

@@ -23,11 +23,12 @@ public class SpeedBuff : PowerupEffect
 
         if (characterRun != null)
         {
-            float originalSpeed = characterRun.speed; 
+            float originalSpeed = 12;
 
             characterRun.speed = speed;
-            Debug.Log(speed);
-            Debug.Log(originalSpeed);
+            //Debug.Log(speed);
+            //Debug.Log(originalSpeed);
+            //Debug.Log(powerUpTime);
             yield return new WaitForSeconds(powerUpTime);
 
             characterRun.speed = originalSpeed;

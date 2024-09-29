@@ -5,14 +5,20 @@ using UnityEngine;
 public class BotonPuertaInicio : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject puerta;
+    [SerializeField] private GameObject player;
+    private PlayerInteraction playerInteraction;
     private float velocidad = 1f;
     public bool used = false;
 
     public bool Utilizado => used;
 
+    private void Start() {
+        playerInteraction = player.GetComponent<PlayerInteraction>();
+    }
+
     public void Interactuar()
     {
-        if(!Utilizado)
+        if(!Utilizado && playerInteraction.llaves[0])
         {
             used = true;
             StartCoroutine(SubirPuerta());

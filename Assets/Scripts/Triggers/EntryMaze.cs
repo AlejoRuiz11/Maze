@@ -7,6 +7,8 @@ public class EntryMaze : MonoBehaviour
 {
     [SerializeField] GameObject countdownText;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject minimap;
+    [SerializeField] GameObject minimapUI;
     private DropFeather dropFeather;
     private void Start()
     {
@@ -18,8 +20,11 @@ public class EntryMaze : MonoBehaviour
         IMovable movable = collider.GetComponent<IMovable>();
         if(movable!=null)
         {
+            minimapUI.SetActive(true);
             countdownText.SetActive(true);
             dropFeather.inMaze = true;
+            minimap.SetActive(true);
+            
             //countdownText.GetComponent<Countdown>().remainingTime += 60;
         }
     }

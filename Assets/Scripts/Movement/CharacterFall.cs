@@ -16,7 +16,7 @@ public class CharacterFall : MonoBehaviour
     {
         if (transform.position.y < -5f)
         {
-            deathCommand.Execute();
+            deathCommand.Do();
         }
     }
 }
