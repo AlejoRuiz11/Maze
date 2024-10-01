@@ -21,10 +21,9 @@ public class SpeedBuff : PowerupEffect
     {
         CharacterRun characterRun = target.GetComponent<CharacterRun>();
 
-        if (characterRun != null)
+        if (characterRun != null && characterRun.speed <= speed)
         {
             float originalSpeed = 12;
-
             characterRun.speed = speed;
             //Debug.Log(speed);
             //Debug.Log(originalSpeed);
@@ -32,6 +31,7 @@ public class SpeedBuff : PowerupEffect
             yield return new WaitForSeconds(powerUpTime);
 
             characterRun.speed = originalSpeed;
+            
         }
     }
 }

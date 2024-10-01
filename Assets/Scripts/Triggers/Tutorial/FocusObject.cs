@@ -8,20 +8,20 @@ public class FocusObject : ICommand
     //private GameObject objectToFocus;
     private GameObject player;
     private GameObject timeCoinCamera;
-    private RectTransform topImage;
-    private RectTransform bottomImage;
+    //private RectTransform topImage;
+    //private RectTransform bottomImage;
 
-    private float moveSpeed = 50;
-    private float distance = 200;
+    //private float moveSpeed = 50;
+    //private float distance = 200;
 
-    public FocusObject(GameObject _currentCameraGO, GameObject _player, GameObject _timeCoinCamera, RectTransform _topImage, RectTransform _bottomImage)
+    public FocusObject(GameObject _currentCameraGO, GameObject _player, GameObject _timeCoinCamera)
     {
         currentCameraGO = _currentCameraGO;
         //objectToFocus = _objectToFocus;
         player = _player;
         timeCoinCamera = _timeCoinCamera;
-        topImage = _topImage;
-        bottomImage = _bottomImage;
+        //topImage = _topImage;
+        //bottomImage = _bottomImage;
     }
 
     public void Do()
@@ -42,7 +42,7 @@ public class FocusObject : ICommand
         timeCoinCamera.SetActive(false);
         //StartCoroutine(UnfocusUI());
     }
-
+/*
     private IEnumerator FocusUI()
     {
         bool finished = false;
@@ -73,6 +73,6 @@ public class FocusObject : ICommand
             }
             yield return null;
         }
-    }
+    }*/
 
 }

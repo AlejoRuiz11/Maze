@@ -5,9 +5,7 @@ using UnityEngine;
 using UnityEngine.TextCore.Text;
 
 public class CharacterInput : MonoBehaviour
-{
-
-    private string RUN_MOVEMENT_STRATEGY = "CharacterRun";
+{   private string RUN_MOVEMENT_STRATEGY = "CharacterRun";
     private string WALK_MOVEMENT_STRATEGY = "CharacterWalk";
 
     private DropFeather playerDropFeather;
@@ -18,8 +16,11 @@ public class CharacterInput : MonoBehaviour
 
     private CharacterJump characterJump;
     public bool camaritaAux = false;
+    private bool isPaused = false;
     [SerializeField] private Transform cam;
     //private CharacterMovement characterMovement;
+
+    [SerializeField] private GameObject pauseHud;
 
     [SerializeField] private KeyCode forward = KeyCode.W;
     [SerializeField] private KeyCode back = KeyCode.S;
@@ -31,6 +32,7 @@ public class CharacterInput : MonoBehaviour
     [SerializeField] private KeyCode interactuar= KeyCode.E;
     [SerializeField] private KeyCode dropYellowFeather = KeyCode.Q;
     [SerializeField] private KeyCode dropEgg = KeyCode.F;
+    [SerializeField] private KeyCode pause = KeyCode.Escape;
 
 
     // CAMARAS
@@ -121,6 +123,25 @@ public class CharacterInput : MonoBehaviour
         if(Input.GetKeyDown(dropEgg))
         {
             playerDropFeather.InstantiateFeather(false);
+        }
+        if(Input.GetKeyDown(pause))
+        {
+            if(isPaused)
+            {
+                //Time.timeScale = 1;
+                isPaused = false;
+                pauseHud.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else
+            {
+                //Time.timeScale = 0;
+                isPaused = true;
+                pauseHud.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
     }
 

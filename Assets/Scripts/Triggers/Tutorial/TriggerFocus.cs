@@ -45,7 +45,7 @@ public class TriggerFocus : MonoBehaviour
     private IEnumerator callCommand(GameObject camera)
     {
         done = true;
-        FocusObject focusTimeCoin = new FocusObject(camera, player, TimeCoinCamera, topImageGO.GetComponent<RectTransform>(),bottomImageGO.GetComponent<RectTransform>());
+        FocusObject focusTimeCoin = new FocusObject(camera, player, TimeCoinCamera);
         focusTimeCoin.Do();
         
         minimapUI.SetActive(false);
