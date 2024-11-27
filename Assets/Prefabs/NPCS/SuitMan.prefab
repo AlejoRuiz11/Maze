@@ -3413,6 +3413,8 @@ GameObject:
   - component: {fileID: 711479028487708501}
   - component: {fileID: 6825389458628871324}
   - component: {fileID: 2566309560198718243}
+  - component: {fileID: 6667081680967009938}
+  - component: {fileID: 573504621087838243}
   m_Layer: 0
   m_Name: SuitMan
   m_TagString: Untagged
@@ -3474,6 +3476,39 @@ MonoBehaviour:
   textUI: {fileID: 3348192178650324219}
   player: {fileID: 0}
   seconds: 6
+--- !u!95 &6667081680967009938
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886544600487171211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9fcd159e42e8d07469dbe2814828b503, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &573504621087838243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7886544600487171211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7c6fd6bbad1604ea506b56ca46c720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7912427580437431790
 GameObject:
   m_ObjectHideFlags: 0

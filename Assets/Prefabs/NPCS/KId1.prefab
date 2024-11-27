@@ -1343,6 +1343,7 @@ GameObject:
   - component: {fileID: 1472613892840099285}
   - component: {fileID: 225784773668936983}
   - component: {fileID: 4903089441569606703}
+  - component: {fileID: 7265228386199014707}
   m_Layer: 0
   m_Name: KId1
   m_TagString: Untagged
@@ -1404,6 +1405,27 @@ MonoBehaviour:
   textUI: {fileID: 3021034488279835490}
   player: {fileID: 0}
   seconds: 6
+--- !u!95 &7265228386199014707
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7970656712070137443}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8104746438509009988
 GameObject:
   m_ObjectHideFlags: 0
