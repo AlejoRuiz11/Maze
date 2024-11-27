@@ -10,8 +10,10 @@ public class NpcInteraction : MonoBehaviour, IInteractable
     [SerializeField] private GameObject player;
     [SerializeField] private float seconds;
     private float rotationSpeed = 2f;
-    
     private bool isTalking;
+    private bool isTalkingAnimation;
+
+
     public void Interactuar()
     {
         if(!textUI.activeInHierarchy)
@@ -25,7 +27,10 @@ public class NpcInteraction : MonoBehaviour, IInteractable
 
     private IEnumerator Talk()
     {
+        isTalkingAnimation = true;
         textUI.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        isTalkingAnimation = false;
         yield return new WaitForSeconds(seconds);
         isTalking = false;
         textUI.SetActive(false);
@@ -64,4 +69,10 @@ public class NpcInteraction : MonoBehaviour, IInteractable
             yield return null;
         }
     }
+
+    public bool IsTalking()
+    {
+        return isTalkingAnimation;
+    }
+
 }

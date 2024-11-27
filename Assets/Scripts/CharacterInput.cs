@@ -8,6 +8,8 @@ public class CharacterInput : MonoBehaviour
 {   private string RUN_MOVEMENT_STRATEGY = "CharacterRun";
     private string WALK_MOVEMENT_STRATEGY = "CharacterWalk";
 
+
+
     private DropFeather playerDropFeather;
     public CharacterWalk characterWalk;
     private CharacterRun characterRun;
@@ -39,11 +41,15 @@ public class CharacterInput : MonoBehaviour
 
     [SerializeField] private GameObject camaraPrimeraPersona;
     [SerializeField] private GameObject camaraTerceraPersona;
+    [SerializeField] private GameObject particlesRun;
 
     // Mesh renderer de cabeza y cuerpo
 
     private GameObject cabeza;
     private GameObject cuerpo;
+    private bool isMoving;
+    private bool isWalking;
+    private bool isJumping;
 
 
     private void Start()
@@ -58,13 +64,33 @@ public class CharacterInput : MonoBehaviour
         playerDropFeather = GetComponent<DropFeather>();
 
         movementLogic = characterWalk;
+        isWalking = true;
+        //particlesRun.SetActive(false);
 
         camaraPrimeraPersona.SetActive(false);
         camaraTerceraPersona.SetActive(true);
         camaritaAux = true; // false == primera persona
 
-        cabeza = transform.Find("Cabeza")?.gameObject;
-        cuerpo = transform.Find("Cuerpo")?.gameObject;
+        GameObject playerVisual = transform.Find("PlayerVisual")?.gameObject;
+        if (playerVisual != null)
+        {
+            cabeza = playerVisual.transform.Find("Cabeza")?.gameObject;
+            cuerpo = playerVisual.transform.Find("Cuerpo")?.gameObject;
+
+            if (cabeza != null)
+                cabeza.SetActive(true);
+            else
+                Debug.LogWarning("Cabeza no encontrada dentro de PlayerVisual.");
+
+            if (cuerpo != null)
+                cuerpo.SetActive(true);
+            else
+                Debug.LogWarning("Cuerpo no encontrado dentro de PlayerVisual.");
+        }
+        else
+        {
+            Debug.LogError("PlayerVisual no encontrado en la jerarquía.");
+        }
 
         cabeza.SetActive(true);
         cuerpo.SetActive(true);
@@ -93,19 +119,57 @@ public class CharacterInput : MonoBehaviour
         if(Input.GetKey(left)) movementLogic.Move(-rightDir);
         if(Input.GetKey(right)) movementLogic.Move(rightDir);
 
-        if(Input.GetKeyDown(sprint)) movementLogic = characterRun;
-        if(Input.GetKeyUp(sprint)) movementLogic = characterWalk;
+        if(Input.GetKeyDown(sprint))
+        {
+            movementLogic = characterRun;
+            /*
+            if(characterJump.IsGrounded())
+            {
+                //particlesRun.SetActive(true);
+            }    */        
+        }
+
+        if(Input.GetKeyUp(sprint))
+        {
+            movementLogic = characterWalk;
+            //particlesRun.SetActive(false);
+        }
 
         if((Input.GetKey(forward)||Input.GetKey(back)||Input.GetKey(left)||Input.GetKey(right)) && !characterJump.IsJumping)
         {
             movementLogic.ReproducirSonido();
+            //isMoving = true;
         }
         else
         {
             movementLogic.PararSonido();
+            //isMoving = false;
         }
 
-        if(Input.GetKey(jump)) characterJump.Jump();
+        if(Input.GetKey(forward)||Input.GetKey(back)||Input.GetKey(left)||Input.GetKey(right)||Input.GetKeyDown(jump))
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving=false;
+        }
+        if(Input.GetKeyDown(jump))
+        {
+            isJumping = true;
+            
+        }
+
+        if(Input.GetKeyUp(jump))
+        {
+            isJumping = false;
+        }
+        if(Input.GetKey(jump))
+        {
+            characterJump.Jump();
+        }
+
+        
 
         if(Input.GetKeyDown(cambiarCamara))
         {
@@ -142,6 +206,17 @@ public class CharacterInput : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
+        }
+
+
+        
+        if(movementLogic == characterWalk)
+        {
+            isWalking = true;
+        }
+        else
+        {
+            isWalking = false;
         }
     }
 
@@ -182,5 +257,21 @@ public class CharacterInput : MonoBehaviour
             Debug.LogWarning($"Component '{name}' not found!");
         }
     }
+
+    public bool IsMoving()
+    {
+        return isMoving;
+    }
+
+    public bool IsWalking()
+    {
+        return isWalking;
+    }
+
+    public bool IsJumping()
+    {
+        return isJumping;
+    }
+
 
 }

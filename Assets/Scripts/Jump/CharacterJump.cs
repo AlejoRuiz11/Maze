@@ -13,7 +13,6 @@ public class CharacterJump : MonoBehaviour, IJumpable
     [SerializeField] private LayerMask groundLayer; // Capa que representa el suelo
     [SerializeField] private Transform groundCheck; // Punto para comprobar si el personaje está en el suelo
     [SerializeField] private float groundCheckRadius = 0.2f; // Radio de verificación del suelo
-
     [SerializeField] private AudioClip audioClip;
     private Rigidbody rb;
     
@@ -21,6 +20,7 @@ public class CharacterJump : MonoBehaviour, IJumpable
     private CharacterSoundManager characterSoundManager;
     private CharacterController characterController;
     private bool isJumping = false;
+    private bool aux = false;
 
     private void Start()
     {
@@ -34,7 +34,8 @@ public class CharacterJump : MonoBehaviour, IJumpable
         // Verifica si el jugador está en el suelo usando CheckSphere
         //isJumping = false;
         isJumping = !Physics.CheckSphere(groundCheck.position, groundCheckRadius, groundLayer);
-       
+        aux = Physics.CheckSphere(groundCheck.position, 0.5f, groundLayer);
+
         if(IsJumping)
         {
             velocity.y -= gravity * Time.deltaTime;
@@ -56,6 +57,7 @@ public class CharacterJump : MonoBehaviour, IJumpable
             isJumping = true; // Marca al personaje como saltando
             ReproducirSonido();
             characterSoundManager.CambiarVolumen(0.2f);
+            aux = true;
         }
     }
 
@@ -63,6 +65,11 @@ public class CharacterJump : MonoBehaviour, IJumpable
     {
         characterSoundManager.cambiarClip(audioClip);
         characterSoundManager.PlayOneShot();
+    }
+
+    public bool IsGrounded()
+    {
+        return aux;
     }
 
 }

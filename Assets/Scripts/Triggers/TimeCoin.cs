@@ -9,6 +9,8 @@ public class TimeCoin : MonoBehaviour//, ICoinable
     private AudioManager audioManager;
     [SerializeField] private float time;
 
+    private float spinSpeed = 100f;
+
     private void Start() {
         audioManager = audioGO.GetComponent<AudioManager>();
     }
@@ -31,6 +33,10 @@ public class TimeCoin : MonoBehaviour//, ICoinable
         }
     }
     
+    private void Update() {
+        transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime);
+    }
+
 /*
     public void takeCoin()
     {

@@ -41,7 +41,7 @@ public class CharacterRun : MonoBehaviour, IMovable
     {
         if(characterSoundManager.getCurrentClip() != characterSoundManager.runSound || !characterSoundManager.IsPlaying())
         {
-            characterSoundManager.CambiarVolumen(0.25f);
+            characterSoundManager.CambiarVolumen(0.1f);
             characterSoundManager.SetLoop(true);
             characterSoundManager.cambiarClip(characterSoundManager.runSound);
             characterSoundManager.Play();
