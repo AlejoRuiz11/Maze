@@ -28,6 +28,7 @@ public class LaserTrigger : MonoBehaviour
 
             if (hit.collider.CompareTag("Player"))
             {
+                EventManager.TriggerTrapTriggered(); 
                 trapActivator.ActivateTrap();
             }
         }

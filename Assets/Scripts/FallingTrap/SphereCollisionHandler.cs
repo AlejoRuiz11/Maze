@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class SphereCollisionHandler : MonoBehaviour
 {
-    public GameOverManager gameOverManager; 
+    private bool hasTriggeredFall = false;  
 
     void OnCollisionEnter(Collision collision)
     {
+        if (!hasTriggeredFall)
+        {
+            hasTriggeredFall = true;
+            EventManager.TriggerBoulderFall(); 
+        }
+
         if (collision.collider.CompareTag("Player"))
         {
-            Debug.Log("Player hit by sphere. Game Over.");
-            gameOverManager.TriggerDefeat(); 
+            EventManager.TriggerPlayerHit(); 
         }
     }
 }
