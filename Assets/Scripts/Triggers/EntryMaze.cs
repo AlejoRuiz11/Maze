@@ -24,6 +24,12 @@ public class EntryMaze : MonoBehaviour
             countdownText.SetActive(true);
             dropFeather.inMaze = true;
             minimap.SetActive(true);
+
+            var marcarObjetivo = GetComponent<MarcarObjetivo>();
+            if (marcarObjetivo != null)
+            {
+                marcarObjetivo.Marcar();
+            }
             
             //countdownText.GetComponent<Countdown>().remainingTime += 60;
         }

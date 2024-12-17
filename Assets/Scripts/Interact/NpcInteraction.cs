@@ -21,6 +21,11 @@ public class NpcInteraction : MonoBehaviour, IInteractable
             isTalking = true;
             StartCoroutine(Talk());
             StartCoroutine(FacePlayer());
+            var marcarObjetivo = GetComponent<MarcarObjetivo>();
+            if (marcarObjetivo != null)
+            {
+                marcarObjetivo.Marcar();
+            }
             //StartCoroutine(RotateTowardsPlayer());
         }
     }

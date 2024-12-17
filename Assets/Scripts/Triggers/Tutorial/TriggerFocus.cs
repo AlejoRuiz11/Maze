@@ -19,6 +19,7 @@ public class TriggerFocus : MonoBehaviour
     [SerializeField] private GameObject TMPinfoGO;
     [SerializeField] private string info;
     [SerializeField] GameObject minimapUI;
+    [SerializeField] ObjetivosHud objetivosUI;
     
     private float moveDistance = 200f;
     private float moveSpeed = 105f;
@@ -49,6 +50,7 @@ public class TriggerFocus : MonoBehaviour
         focusTimeCoin.Do();
         
         minimapUI.SetActive(false);
+        objetivosUI.OcultarHUD();
         RectTransform topImage = topImageGO.GetComponent<RectTransform>();
         RectTransform bottomImage = bottomImageGO.GetComponent<RectTransform>();
         float aux = bottomImage.anchoredPosition.y; // -650
@@ -85,6 +87,13 @@ public class TriggerFocus : MonoBehaviour
             yield return null;
         }
         minimapUI.SetActive(true);
+        objetivosUI.MostrarHUD();
+        
+        var marcarObjetivo = GetComponent<MarcarObjetivo>();
+        if (marcarObjetivo != null)
+        {
+            marcarObjetivo.Marcar();
+        }
 
         //topImage.anchoredPosition = topImageBackup.anchoredPosition;
         //bottomImage.anchoredPosition = bottomImageBackup.anchoredPosition;

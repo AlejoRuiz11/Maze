@@ -14,6 +14,7 @@ public class ShowCity : MonoBehaviour
     [SerializeField] private GameObject thirdPersonCamera;
     [SerializeField] private GameObject topImageGO;
     [SerializeField] private GameObject bottomImageGO;
+    [SerializeField] ObjetivosHud objetivosUI;
 
     private GameObject cameraa;
     public bool used = false;
@@ -33,7 +34,7 @@ public class ShowCity : MonoBehaviour
 
         FocusObject focusTimeCoin = new FocusObject(cameraa, player, objectCamera);
         focusTimeCoin.Do();
-        
+        //objetivosUI.OcultarHUD();
         RectTransform topImage = topImageGO.GetComponent<RectTransform>();
         RectTransform bottomImage = bottomImageGO.GetComponent<RectTransform>();
         float aux = bottomImage.anchoredPosition.y; // -650
@@ -70,5 +71,6 @@ public class ShowCity : MonoBehaviour
             }
             yield return null;
         }
+        objetivosUI.MostrarHUD();
     }
 }
