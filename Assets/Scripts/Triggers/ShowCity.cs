@@ -71,6 +71,13 @@ public class ShowCity : MonoBehaviour
             }
             yield return null;
         }
+
         objetivosUI.MostrarHUD();
+        yield return new WaitForSeconds(0.2f);
+        var marcarObjetivo = GetComponent<MarcarObjetivo>();
+        if (marcarObjetivo != null)
+        {
+            marcarObjetivo.Marcar();
+        }
     }
 }

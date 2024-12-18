@@ -9,6 +9,7 @@ public class EntryMaze : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject minimap;
     [SerializeField] GameObject minimapUI;
+    [SerializeField] AudioManager audioManager;
     private DropFeather dropFeather;
     private void Start()
     {
@@ -30,7 +31,9 @@ public class EntryMaze : MonoBehaviour
             {
                 marcarObjetivo.Marcar();
             }
-            
+            audioManager.PlayMazeMusic();
+
+
             //countdownText.GetComponent<Countdown>().remainingTime += 60;
         }
     }

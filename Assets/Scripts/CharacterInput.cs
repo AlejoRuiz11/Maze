@@ -42,6 +42,7 @@ public class CharacterInput : MonoBehaviour
     [SerializeField] private GameObject camaraPrimeraPersona;
     [SerializeField] private GameObject camaraTerceraPersona;
     [SerializeField] private GameObject particlesRun;
+    [SerializeField] private GameObject ObjetivosHUD;
 
     // Mesh renderer de cabeza y cuerpo
 
@@ -197,6 +198,7 @@ public class CharacterInput : MonoBehaviour
                 pauseHud.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                ObjetivosHUD.SetActive(true);
             }
             else
             {
@@ -205,6 +207,7 @@ public class CharacterInput : MonoBehaviour
                 pauseHud.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                ObjetivosHUD.SetActive(false);
             }
         }
 
