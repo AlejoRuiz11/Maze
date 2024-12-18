@@ -69,7 +69,7 @@ private IEnumerator ObjetivoAux()
     }
 
     // Esperar 1 segundo
-    yield return new WaitForSeconds(0.01f);
+    yield return new WaitForSeconds(0.015f);
 
     // Eliminar el objetivo auxiliar
     Destroy(objetivoAux);
@@ -163,8 +163,7 @@ private IEnumerator ObjetivoAux()
 
     public void MostrarHUD()
     {
-        // Aquí puedes activar el objeto del HUD o realizar cualquier lógica para mostrarlo
-        gameObject.SetActive(true); // Activa el GameObject que contiene este script
+        gameObject.SetActive(true);
     }
 
     public void OcultarHUD()

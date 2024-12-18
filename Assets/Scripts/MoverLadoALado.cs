@@ -4,27 +4,34 @@ using UnityEngine;
 
 public class MoverLadoALado : MonoBehaviour
 {
-    public float velocidad = 2f;  // Velocidad del movimiento
-    private bool moviendoHaciaPositivo = true;  // Dirección del movimiento
+    public float velocidad = 2f;
+    private bool moviendoHaciaPositivo = true;
+    private float posicionInicialZ;
+    private float diferencia = 100f; 
+
+    void Start()
+    {
+        posicionInicialZ = transform.position.z;
+    }
 
     void Update()
     {
-        // Movimiento en el eje Z
         if (moviendoHaciaPositivo)
         {
             transform.Translate(Vector3.forward * velocidad * Time.deltaTime);
-            if (transform.position.z >= 100f)
+            if (transform.position.z >= posicionInicialZ + diferencia)
             {
-                moviendoHaciaPositivo = false;  // Cambiar dirección
+                moviendoHaciaPositivo = false;
             }
         }
         else
         {
             transform.Translate(Vector3.back * velocidad * Time.deltaTime);
-            if (transform.position.z <= -100f)
+            if (transform.position.z <= posicionInicialZ)
             {
-                moviendoHaciaPositivo = true;  // Cambiar dirección
+                moviendoHaciaPositivo = true;
             }
         }
     }
+
 }
