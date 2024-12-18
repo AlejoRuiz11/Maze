@@ -12,7 +12,9 @@ public class IntroManager : MonoBehaviour
     [SerializeField] private CharacterInput characterInput;
     [SerializeField] private GameObject camaraPrincipal;
     [SerializeField] private AudioSource audioSourcePresentador;
+    [SerializeField] private GameObject skipGO;
     private bool aux = false;
+    private bool aux1 = false;
 
     private Coroutine coroutine;
 
@@ -33,12 +35,12 @@ public class IntroManager : MonoBehaviour
     {
         if(!aux)
         {
-            if(Input.anyKeyDown)
+            if(Input.anyKeyDown && aux1)
             {
-            if(coroutine != null)
-            {
-                PararCorutina();
-            }
+                if(coroutine != null)
+                {
+                    PararCorutina();
+                }
             }
         }
     }
@@ -55,7 +57,7 @@ public class IntroManager : MonoBehaviour
             camara4.SetActive(false);
             camara5.SetActive(false);
             audioSourcePresentador.Stop();
-
+            skipGO.SetActive(false);
             camaraPrincipal.SetActive(true);
             aux = true;
         }
@@ -66,7 +68,10 @@ public class IntroManager : MonoBehaviour
         // 1:05
         camara1.SetActive(true);
         Coroutine a = StartCoroutine(Mover(camara1,3.5f,Vector3.back));
-        yield return new WaitForSeconds(10f); //55
+        yield return new WaitForSeconds(5f); //55
+        skipGO.SetActive(true);
+        aux1 = true;    
+        yield return new WaitForSeconds(5f); //55
         StopCoroutine(a);
         camara1.SetActive(false);
         camara2.SetActive(true);
