@@ -6,7 +6,7 @@ public class GameWon : MonoBehaviour
 {
     public GameObject Player;
     [SerializeField] private CharacterInput characterInput;
-    private CharacterRun characterRun;
+    [SerializeField] private CharacterRun characterRun;
     [SerializeField] private GameObject camaraJugador2;
     [SerializeField] private GameObject camaraJugador1;
     [SerializeField] private GameObject camaraFinal;
@@ -22,7 +22,14 @@ public class GameWon : MonoBehaviour
     private IEnumerator instanciarRun()
     {
         yield return 5;
-        characterRun = Player.GetComponent<CharacterRun>();        
+        float aux = 0;
+        while(aux < 9)
+        {
+            characterRun = Player.GetComponent<CharacterRun>();        
+            yield return new WaitForSeconds(10f);
+            aux++;
+        }
+       
     }
 
     private void OnTriggerEnter(Collider other)
